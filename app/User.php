@@ -27,7 +27,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function cryptos(){
         return $this->hasMany('App\Crypto');
+    }
+
+    /**
+     * @return mixed
+     */
+    public function isAdmin()
+    {
+        return $this->is_admin;
     }
 }
