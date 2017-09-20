@@ -19,7 +19,7 @@ class Admin
         if ( Auth::check() && Auth::user()->isAdmin()) {
             return $next($request);
         }else if(Auth::check()){
-            return redirect('/dashboard');
+            return redirect('/cryptos');
         }
         return redirect('/');
     }

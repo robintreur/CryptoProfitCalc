@@ -17,5 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'AdminController@index')->name('home');
-Route::get('/dashboard', 'AuthController@index')->name('dashboard');
+Route::get('/dashboard', 'AdminController@index')->name('dashboard');
+
+Route::get('/cryptos', 'CryptoController@index')->name('cryptos');
+
+Route::get('/cryptos/detail/{crypto}', 'CryptoController@detail')->name('cryptos');
