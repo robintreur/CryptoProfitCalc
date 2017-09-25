@@ -15,8 +15,11 @@
                         @endif
 
                         <ul>
+{{--                            <li>{{$capData}}</li>--}}
+
+                            <li>{{$cryptos}}</li>
                             @foreach ($cryptos as $crypto)
-                                <li><a href="cryptos/detail/{{$crypto->id}}">{{$crypto->id}}: {{$crypto->coin->name}}</a></li>
+                                <li><a href="cryptos/detail/{{$crypto->id}}">{{$crypto->id}}: {{$crypto->coin->name}} ({{$output[$crypto->coin->short_name]['price_usd']}})</a></li>
                             @endforeach
                         </ul>
                     </div>
