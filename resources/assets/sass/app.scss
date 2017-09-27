@@ -7,3 +7,12 @@
 
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+
+// Global
+@import "global/_global";
+@import "global/_crypto-font";
+@import "global/_nav";
+
+// Components
+@import "components/_add-new";

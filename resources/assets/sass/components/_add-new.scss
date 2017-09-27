@@ -1,0 +1,47 @@
+.add-new{
+  height:0;
+  position: fixed;
+  bottom: -100%;
+  padding:40px 0;
+  width: 100%;
+  background: $green;
+  left: 0;
+  transition: all ease .3s;
+
+  .container{
+    position: relative;
+  }
+
+  span{
+    font-family: 'Arvo', Arial;
+    font-weight:bold;
+    font-size:18px;
+  }
+}
+.add-new:hover{
+  bottom: 0;
+  height: auto;
+}
+.add-new_btn{
+  display: block;
+  position: fixed;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  right: 20px;
+  padding: 16px;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 65px;
+  line-height: 27px;
+  color: #25384b;
+  transition: all ease .3s;
+  cursor: pointer;
+
+  &:hover{
+    text-decoration: none;
+    transform: rotate(90deg);
+    color: #25384b;
+  }
+}

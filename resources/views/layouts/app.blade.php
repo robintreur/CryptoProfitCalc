@@ -11,11 +11,11 @@
     <title>{{ config('app.name', 'CryptoProfitCalc') }}</title>
 
     <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">
 
@@ -72,9 +72,9 @@
                 </div>
             </div>
         </nav>
-
+    <main class="container-fluid">
         @yield('content')
-    </div>
+    </main>
 
     <!-- Scripts -->
     <script src="{{ mix('js/app.js') }}"></script>

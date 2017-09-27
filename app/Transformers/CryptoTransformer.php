@@ -3,9 +3,7 @@
 namespace App\Transformers;
 
 use App\Crypto;
-use App\Http\Controllers\CryptoController;
 use League\Fractal\TransformerAbstract;
-use Illuminate\Database\Eloquent\Collection;
 
 class CryptoTransformer extends TransformerAbstract
 {
@@ -35,6 +33,11 @@ class CryptoTransformer extends TransformerAbstract
         foreach ($capsData as $capData) {
             $dataArray[$capData['symbol']] = $capData;
         }
+
+        $percent_change_1h = $dataArray[$crypto->coin->short_name]['percent_change_1h'];
+        $percent_change_24h = $dataArray[$crypto->coin->short_name]['percent_change_24h'];
+        $percent_change_7d = $dataArray[$crypto->coin->short_name]['percent_change_7d'];
+
         $price_eur = $dataArray[$crypto->coin->short_name]['price_eur'];
         $price_usd = $dataArray[$crypto->coin->short_name]['price_usd'];
         $profit_eur = CryptoTransformer::profit($crypto->number, $crypto->purchase_price, $price_eur);
@@ -59,6 +62,11 @@ class CryptoTransformer extends TransformerAbstract
             'usd' => [
                 'price' => $price_usd,
                 'profit' => $profit_usd,
+            ],
+            'change' => [
+                'hour' => $percent_change_1h,
+                'day' => $percent_change_24h,
+                'week' => $percent_change_7d,
             ],
         ];
     }
