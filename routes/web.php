@@ -22,3 +22,9 @@ Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 Route::get('/cryptos', 'CryptoController@index')->name('cryptos');
 
 Route::get('/cryptos/detail/{crypto}', 'CryptoController@detail')->name('cryptos');
+
+
+//API
+Route::get('/api/cryptos', 'CryptoController@apiIndex')->name('cryptos');
+
+Route::get('/api/cryptos/detail/{crypto}', 'CryptoController@apiDetail')->name('cryptos');

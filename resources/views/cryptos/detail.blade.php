@@ -8,7 +8,7 @@
                     <div class="panel-heading">Cryptocurrency detail</div>
 
                     <div class="panel-body">
-                        {{$crypto}}
+                        {{--{{$crypto}}--}}
                     </div>
                 </div>
             </div>

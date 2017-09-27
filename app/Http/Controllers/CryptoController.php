@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use League\Fractal\Manager;
+use League\Fractal\Resource\Collection;
 
 use App\Crypto;
+use App\Transformers\CryptoTransformer;
 
 class CryptoController extends Controller
 {
@@ -19,38 +22,41 @@ class CryptoController extends Controller
     }
 
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
+     * @return array
      */
     public function index()
     {
-        $cryptos = Crypto::with(['coin'])->where('user_id', auth()->user()->id)->get();
-
-        $capData = file_get_contents('https://api.coinmarketcap.com/v1/ticker/?limit=600&convert=EUR');
-        $capData = json_decode($capData, true);
-
-        // new blade friendly array
-        $output = [];
-        // loop over every crypto currency
-        foreach ($capData as $object) {
-            $output[$object['symbol']] = $object;
-        }
-
-        return view('cryptos.index', compact('cryptos', 'output'));
+        return view('cryptos.index');
     }
 
+    /**
+     * @return array
+     */
     public function detail($id)
     {
-        $crypto = Crypto::find($id)->with(['coin'])->where('user_id', auth()->user()->id)->get();
-
-        return view('cryptos.detail', compact('crypto'));
+        return view('cryptos.detail');
     }
 
-    public function getData()
+    /**
+     * @return array
+     */
+    public function apiDetail($id)
+    {
+        $crypto = Crypto::find($id)->with(['coin'])->where('user_id', auth()->user()->id)->first();
+
+        return (new CryptoTransformer)->transform($crypto);
+    }
+
+    /**
+     * @return array
+     */
+    public function apiIndex()
     {
 
+        $cryptos = Crypto::with(['coin'])->where('user_id', auth()->user()->id)->get();
 
-        return view('cryptos.detail', compact('crypto'));
+        return fractal()->collection($cryptos)->transformWith(new CryptoTransformer())->toArray();
+
+
     }
 }
