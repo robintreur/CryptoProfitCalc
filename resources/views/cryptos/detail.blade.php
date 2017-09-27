@@ -8,7 +8,14 @@
                     <div class="panel-heading">Cryptocurrency detail</div>
 
                     <div class="panel-body">
-                        {{--{{$crypto}}--}}
+                        <h1>{{$crypto->coin->name}}</h1>
+                        <h3>Winst: €{{$crypto->eur->profit}}</h3>
+                        <h5>Munt waarde: €{{$crypto->eur->price}}</h5>
+                        <ul>
+                            <li>Afkorting: {{$crypto->coin->short_name}}</li>
+                            <li>Inkoopprijs: {{$crypto->purchase_price}}</li>
+                            <li>Aantal: {{$crypto->number}}</li>
+                        </ul>
                     </div>
                 </div>
             </div>

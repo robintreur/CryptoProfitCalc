@@ -15,6 +15,13 @@
                         @endif
 
                         <ul>
+                            @foreach($data as $cryptos)
+                                @foreach($cryptos as $crypto)
+                                    <h1>€{{$crypto->eur->profit}} - {{$crypto->coin->name}}</h1>
+                                    <a class="btn btn-primary" href="/cryptos/detail/{{$crypto->id}}">Detail</a>
+                                    <hr>
+                                @endforeach
+                            @endforeach
                             {{--@foreach ($cryptos as $crypto)--}}
                                 {{--<li><a href="cryptos/detail/{{$crypto->id}}">{{$crypto->id}}: {{$crypto->coin->name}}<br>price:{{$dataArray[$crypto->coin->short_name]['price_usd']}}</a></li>--}}
                             {{--@endforeach--}}

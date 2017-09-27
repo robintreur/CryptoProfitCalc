@@ -3,8 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use League\Fractal\Manager;
-use League\Fractal\Resource\Collection;
+use Illuminate\Support\Facades\Route;
 
 use App\Crypto;
 use App\Transformers\CryptoTransformer;
@@ -26,7 +25,10 @@ class CryptoController extends Controller
      */
     public function index()
     {
-        return view('cryptos.index');
+        $request = Request::create('api/cryptos', 'GET');
+        $data = json_decode(Route::dispatch($request)->getContent());
+
+        return view('cryptos.index', compact('data'));
     }
 
     /**
@@ -34,7 +36,10 @@ class CryptoController extends Controller
      */
     public function detail($id)
     {
-        return view('cryptos.detail');
+        $request = Request::create("api/cryptos/detail/$id" , 'GET');
+        $crypto = json_decode(Route::dispatch($request)->getContent());
+
+        return view('cryptos.detail', compact('crypto'));
     }
 
     /**

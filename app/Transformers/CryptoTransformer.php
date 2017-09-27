@@ -41,25 +41,24 @@ class CryptoTransformer extends TransformerAbstract
         $profit_usd = CryptoTransformer::profit($crypto->number, $crypto->purchase_price, $price_usd);
 
         return [
-            $crypto->id => [
-                'user' => [
-                    'name' => $crypto->user->name,
-                    'email' => $crypto->user->email,
-                ],
-                'coin' => [
-                    'name' => $crypto->coin->name,
-                    'short_name' => $crypto->coin->short_name,
-                ],
-                'purchase_price'  => $crypto->purchase_price,
-                'number'  => $crypto->number,
-                'eur' => [
-                    'price' => $price_eur,
-                    'profit' => $profit_eur,
-                ],
-                'usd' => [
-                    'price' => $price_usd,
-                    'profit' => $profit_usd,
-                ],
+            'id' => $crypto->id,
+            'user' => [
+                'name' => $crypto->user->name,
+                'email' => $crypto->user->email,
+            ],
+            'coin' => [
+                'name' => $crypto->coin->name,
+                'short_name' => $crypto->coin->short_name,
+            ],
+            'purchase_price'  => $crypto->purchase_price,
+            'number'  => $crypto->number,
+            'eur' => [
+                'price' => $price_eur,
+                'profit' => $profit_eur,
+            ],
+            'usd' => [
+                'price' => $price_usd,
+                'profit' => $profit_usd,
             ],
         ];
     }
