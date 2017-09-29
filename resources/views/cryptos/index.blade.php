@@ -23,10 +23,7 @@
             @endforeach
         @endforeach
     </div>
-    <div class="add-new">
-        <div class="container">
-            <span>Add new Crypto</span>
-            <a class="add-new_btn">+</a>
-        </div>
-    </div>
+
+    @include('layouts.add')
+
 @endsection

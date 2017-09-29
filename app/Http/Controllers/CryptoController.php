@@ -47,7 +47,7 @@ class CryptoController extends Controller
      */
     public function apiDetail($id)
     {
-        $crypto = Crypto::find($id)->with(['coin'])->where('user_id', auth()->user()->id)->first();
+        $crypto = Crypto::with(['coin'])->where('id', $id)->where('user_id', auth()->user()->id)->first();
 
         return (new CryptoTransformer)->transform($crypto);
     }

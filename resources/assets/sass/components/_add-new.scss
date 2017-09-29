@@ -1,12 +1,4 @@
 .add-new{
-  height:0;
-  position: fixed;
-  bottom: -100%;
-  padding:40px 0;
-  width: 100%;
-  background: $green;
-  left: 0;
-  transition: all ease .3s;
 
   .container{
     position: relative;
@@ -16,9 +8,18 @@
     font-family: 'Arvo', Arial;
     font-weight:bold;
     font-size:18px;
+    pointer-events: none;
+    height:0;
+    position: fixed;
+    bottom: -100%;
+    padding:40px 0;
+    width: 100%;
+    background: $green;
+    left: 0;
+    transition: all ease .3s;
   }
 }
-.add-new:hover{
+.add-new:hover span{
   bottom: 0;
   height: auto;
 }

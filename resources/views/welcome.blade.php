@@ -2,8 +2,11 @@
 
 @section('content')
 <div class="container">
-    <div class="content">
-        <h1>Welcome page</h1>
-    </div>
+    <section class="row">
+        <div class="col-md-12 text-center">
+            <h1>Quick overview of all your crypto profits</h1>
+            <span class="sub">Create an account for free</span>
+        </div>
+    </section>
 </div>
 @endsection

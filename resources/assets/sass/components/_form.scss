@@ -1,0 +1,10 @@
+.form-control{
+  background-color: $white-opacity;
+  border-color: $white-opacity;
+  border-radius: 0;
+  color: #fff;
+
+  &:focus{
+    box-shadow: 0 0 8px $green;
+  }
+}
