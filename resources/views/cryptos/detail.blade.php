@@ -1,11 +1,12 @@
 @extends('layouts.app')
+@section('body-class', 'crypto')
 
 @section('content')
     <div class="container">
         <div class="row" style="margin-top: 100px">
             <div class="col-xs-12 col-md-8 col-md-offset-2">
                 <h1 class="underline cc {{$crypto->coin->short_name}}">{{$crypto->coin->name}}</h1>
-                <div class="lined">
+                <div class="lined body">
                     <h3>Winst: €{{$crypto->eur->profit}}</h3>
                     <div class="row">
                         <div class="col-md-6">
@@ -26,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row endbody">
                     <div class="col-md-12">
                         <a href="#" class="edit btn btn-half">Edit {{$crypto->coin->name}}</a>
                         <a href="#" class="remove btn btn-half">Remove {{$crypto->coin->name}}</a>

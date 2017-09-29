@@ -1,7 +1,8 @@
 @extends('layouts.app')
+@section('body-class', 'cryptos')
 
 @section('content')
-    <div class="overview">
+    <div class="overview-container">
         @foreach($data as $cryptos)
             @foreach($cryptos as $crypto)
                 <section class="row overview">
@@ -10,7 +11,7 @@
                             <h1 class="cc {{$crypto->coin->short_name}}">{{$crypto->coin->name}}</h1>
                             <h3>€{{$crypto->eur->profit}}</h3>
                         </div>
-                        <a class="btn" href="/cryptos/detail/{{$crypto->id}}">Click here for more detail</a>
+                        <a class="btn cryptos-out" href="/cryptos/detail/{{$crypto->id}}">Click here for more detail</a>
                     </div>
                     <div class="col-md-6">
                         <div class="inner text-center change-container">

@@ -9658,6 +9658,19 @@ nav {
   color: #fff;
 }
 
+body.cryptos .overview {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+body.crypto h1,
+body.crypto .body,
+body.crypto .endbody {
+  opacity: 0;
+  -webkit-transform: translateX(100px);
+          transform: translateX(100px);
+}
+
 .add-new .container {
   position: relative;
 }

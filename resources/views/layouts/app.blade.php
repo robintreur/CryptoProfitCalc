@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body class="@yield('body-class')">
     <nav class="navbar-default navbar-static-top">
             <div class="container">
                 <div class="navbar-header">

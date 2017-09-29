@@ -1,0 +1,14 @@
+body.cryptos{
+
+  .overview{
+    transform: translateX(-100%);
+  }
+}
+body.crypto{
+  h1,
+  .body,
+  .endbody{
+    opacity:0;
+    transform: translateX(100px);
+  }
+}
