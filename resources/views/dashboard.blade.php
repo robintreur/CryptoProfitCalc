@@ -3,22 +3,22 @@
 
 @section('content')
 <div class="container">
-    <div class="row">
+    <section class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">ADMIN Dashboard</div>
-
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
+            @if (session('status'))
+                <div class="alert alert-success">
+                    {{ session('status') }}
                 </div>
-            </div>
+            @endif
+
+            @foreach($users as $user)
+                <p>
+                {{$user->name}} |
+                {{$user->email}} |
+                {{$user->is_admin}}
+                </p>
+            @endforeach
         </div>
-    </div>
+    </section>
 </div>
 @endsection

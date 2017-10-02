@@ -3,10 +3,22 @@
 namespace App\Transformers;
 
 use App\Crypto;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Cache;
 use League\Fractal\TransformerAbstract;
 
 class CryptoTransformer extends TransformerAbstract
 {
+    private $dataArray;
+
+    public function __construct()
+    {
+        $this->dataArray = App::make('caps');
+
+//        $this->dataArray = Cache::get('testtest');
+//        print_r($this->dataArray);exit;
+    }
 
     /**
      * @param $coins
@@ -26,20 +38,12 @@ class CryptoTransformer extends TransformerAbstract
 
     public function transform(Crypto $crypto)
     {
-        $capsData = file_get_contents('https://api.coinmarketcap.com/v1/ticker/?limit=600&convert=EUR');
-        $capsData = json_decode($capsData, true);
+        $percent_change_1h = $this->dataArray[$crypto->coin->short_name]['percent_change_1h'];
+        $percent_change_24h = $this->dataArray[$crypto->coin->short_name]['percent_change_24h'];
+        $percent_change_7d = $this->dataArray[$crypto->coin->short_name]['percent_change_7d'];
 
-        // new blade friendly array
-        foreach ($capsData as $capData) {
-            $dataArray[$capData['symbol']] = $capData;
-        }
-
-        $percent_change_1h = $dataArray[$crypto->coin->short_name]['percent_change_1h'];
-        $percent_change_24h = $dataArray[$crypto->coin->short_name]['percent_change_24h'];
-        $percent_change_7d = $dataArray[$crypto->coin->short_name]['percent_change_7d'];
-
-        $price_eur = $dataArray[$crypto->coin->short_name]['price_eur'];
-        $price_usd = $dataArray[$crypto->coin->short_name]['price_usd'];
+        $price_eur = $this->dataArray[$crypto->coin->short_name]['price_eur'];
+        $price_usd = $this->dataArray[$crypto->coin->short_name]['price_usd'];
         $profit_eur = CryptoTransformer::profit($crypto->number, $crypto->purchase_price, $price_eur);
         $profit_usd = CryptoTransformer::profit($crypto->number, $crypto->purchase_price, $price_usd);
 

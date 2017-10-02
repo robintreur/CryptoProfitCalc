@@ -22,6 +22,15 @@
                     </div>
                 </section>
             @endforeach
+
+            @if(!$cryptos)
+                <section class="row">
+                    <div class="col-md-12 text-center">
+                        <h1>Add your first Cryptocoin</h1>
+                        <span class="add-new_info"></span>
+                    </div>
+                </section>
+            @endif
         @endforeach
     </div>
 

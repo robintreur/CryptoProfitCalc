@@ -39,10 +39,32 @@
   color: #25384b;
   transition: all ease .3s;
   cursor: pointer;
+  box-shadow: 0px 0px 100px $dark-grey;
 
   &:hover{
     text-decoration: none;
     transform: rotate(90deg);
     color: #25384b;
+  }
+}
+.add-new_info{
+  height: calc(100vh - 207px);
+  width: calc(50% - 88px);
+  left: 50%;
+  position: fixed;
+  border-left: 5px dashed $green;
+  display: block;
+  border-bottom: 5px dashed $green;
+
+  &:after{
+    content: "";
+    width: 85px;
+    height: 85px;
+    border: 5px dashed $green;
+    display: block;
+    border-radius: 50%;
+    right: 7.5px;
+    bottom: 7.5px;
+    position: fixed;
   }
 }

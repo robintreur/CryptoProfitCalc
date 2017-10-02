@@ -57,8 +57,9 @@ class CryptoController extends Controller
      */
     public function apiIndex()
     {
-
         $cryptos = Crypto::with(['coin'])->where('user_id', auth()->user()->id)->get();
+
+
 
         return fractal()->collection($cryptos)->transformWith(new CryptoTransformer())->toArray();
 
