@@ -23,7 +23,9 @@ $(".add-new_btn").on('click' , function(event){
             window.location.href = btn;
         }
     });
-    tl.to(".add-new span", 0.2, {ease: Expo.ease, height: "100vh", bottom: 0});
+    tl.to(".add-new span", 0.1, {ease: Expo.ease, height: "100vh", bottom: 0});
+    tl.to(".add-new span", 0.3, {ease: Expo.ease, background: "#34495e"});
+    tl.to(".add-new span div", 0.3, {ease: Expo.ease, opacity: 0}, '0.3');
 });
 
 if($('body').is('.crypto')){

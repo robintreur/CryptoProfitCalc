@@ -4153,29 +4153,29 @@ fieldset[disabled] .btn-primary.focus {
 
 .btn-success {
   color: #fff;
-  background-color: #2ab27b;
-  border-color: #259d6d;
+  background-color: #8cefc7;
+  border-color: #76ecbc;
 }
 
 .btn-success:focus,
 .btn-success.focus {
   color: #fff;
-  background-color: #20895e;
-  border-color: #0d3625;
+  background-color: #5fe9b1;
+  border-color: #1cc681;
 }
 
 .btn-success:hover {
   color: #fff;
-  background-color: #20895e;
-  border-color: #196c4b;
+  background-color: #5fe9b1;
+  border-color: #40e4a2;
 }
 
 .btn-success:active,
 .btn-success.active,
 .open > .btn-success.dropdown-toggle {
   color: #fff;
-  background-color: #20895e;
-  border-color: #196c4b;
+  background-color: #5fe9b1;
+  border-color: #40e4a2;
 }
 
 .btn-success:active:hover,
@@ -4188,8 +4188,8 @@ fieldset[disabled] .btn-primary.focus {
 .open > .btn-success.dropdown-toggle:focus,
 .open > .btn-success.dropdown-toggle.focus {
   color: #fff;
-  background-color: #196c4b;
-  border-color: #0d3625;
+  background-color: #40e4a2;
+  border-color: #1cc681;
 }
 
 .btn-success:active,
@@ -4207,12 +4207,12 @@ fieldset[disabled] .btn-primary.focus {
 fieldset[disabled] .btn-success:hover,
 fieldset[disabled] .btn-success:focus,
 fieldset[disabled] .btn-success.focus {
-  background-color: #2ab27b;
-  border-color: #259d6d;
+  background-color: #8cefc7;
+  border-color: #76ecbc;
 }
 
 .btn-success .badge {
-  color: #2ab27b;
+  color: #8cefc7;
   background-color: #fff;
 }
 
@@ -4348,29 +4348,29 @@ fieldset[disabled] .btn-warning.focus {
 
 .btn-danger {
   color: #fff;
-  background-color: #bf5329;
-  border-color: #aa4a24;
+  background-color: #ffb497;
+  border-color: #ffa27e;
 }
 
 .btn-danger:focus,
 .btn-danger.focus {
   color: #fff;
-  background-color: #954120;
-  border-color: #411c0e;
+  background-color: #ff8f64;
+  border-color: #fd4700;
 }
 
 .btn-danger:hover {
   color: #fff;
-  background-color: #954120;
-  border-color: #78341a;
+  background-color: #ff8f64;
+  border-color: #ff7540;
 }
 
 .btn-danger:active,
 .btn-danger.active,
 .open > .btn-danger.dropdown-toggle {
   color: #fff;
-  background-color: #954120;
-  border-color: #78341a;
+  background-color: #ff8f64;
+  border-color: #ff7540;
 }
 
 .btn-danger:active:hover,
@@ -4383,8 +4383,8 @@ fieldset[disabled] .btn-warning.focus {
 .open > .btn-danger.dropdown-toggle:focus,
 .open > .btn-danger.dropdown-toggle.focus {
   color: #fff;
-  background-color: #78341a;
-  border-color: #411c0e;
+  background-color: #ff7540;
+  border-color: #fd4700;
 }
 
 .btn-danger:active,
@@ -4402,12 +4402,12 @@ fieldset[disabled] .btn-warning.focus {
 fieldset[disabled] .btn-danger:hover,
 fieldset[disabled] .btn-danger:focus,
 fieldset[disabled] .btn-danger.focus {
-  background-color: #bf5329;
-  border-color: #aa4a24;
+  background-color: #ffb497;
+  border-color: #ffa27e;
 }
 
 .btn-danger .badge {
-  color: #bf5329;
+  color: #ffb497;
   background-color: #fff;
 }
 
@@ -6166,12 +6166,12 @@ a.label:focus {
 }
 
 .label-success {
-  background-color: #2ab27b;
+  background-color: #8cefc7;
 }
 
 .label-success[href]:hover,
 .label-success[href]:focus {
-  background-color: #20895e;
+  background-color: #5fe9b1;
 }
 
 .label-info {
@@ -6193,12 +6193,12 @@ a.label:focus {
 }
 
 .label-danger {
-  background-color: #bf5329;
+  background-color: #ffb497;
 }
 
 .label-danger[href]:hover,
 .label-danger[href]:focus {
-  background-color: #954120;
+  background-color: #ff8f64;
 }
 
 .badge {
@@ -6493,7 +6493,7 @@ a.thumbnail.active {
 }
 
 .progress-bar-success {
-  background-color: #2ab27b;
+  background-color: #8cefc7;
 }
 
 .progress-striped .progress-bar-success {
@@ -6517,7 +6517,7 @@ a.thumbnail.active {
 }
 
 .progress-bar-danger {
-  background-color: #bf5329;
+  background-color: #ffb497;
 }
 
 .progress-striped .progress-bar-danger {
@@ -8498,7 +8498,7 @@ section.overview:nth-child(4n+4) > div:last-child {
 }
 
 .change-container > span .change {
-  color: #bf5329;
+  color: #ffb497;
   position: relative;
   padding-left: 15px;
 }
@@ -8512,17 +8512,17 @@ section.overview:nth-child(4n+4) > div:last-child {
   position: absolute;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid #bf5329;
+  border-top: 5px solid #ffb497;
 }
 
 .change-container > span .change.high {
-  color: #2ab27b;
+  color: #8cefc7;
 }
 
 .change-container > span .change.high:before {
   position: absolute;
   border-top: 0;
-  border-bottom: 5px solid #2ab27b;
+  border-bottom: 5px solid #8cefc7;
 }
 
 /*! Cryptocoins - cryptocurrency icon font | https://github.com/allienworks/cryptocoins */
@@ -8545,6 +8545,7 @@ section.overview:nth-child(4n+4) > div:last-child {
   text-decoration: none;
   text-transform: none;
   margin-right: 10px;
+  opacity: 0.4;
 }
 
 .cc.ADC-alt::before {
@@ -9725,11 +9726,13 @@ body.crypto .endbody {
   -webkit-transition: all ease .3s;
   transition: all ease .3s;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 100px #25384b;
-          box-shadow: 0px 0px 100px #25384b;
+  -webkit-box-shadow: 0 0 100px #25384b;
+          box-shadow: 0 0 100px #25384b;
 }
 
-.add-new_btn:hover {
+.add-new_btn:hover,
+.add-new_btn:focus,
+.add-new_btn:active {
   text-decoration: none;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);

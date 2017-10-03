@@ -45,6 +45,14 @@ class CryptoController extends Controller
     /**
      * @return array
      */
+    public function add()
+    {
+        return view('cryptos.add');
+    }
+
+    /**
+     * @return array
+     */
     public function apiDetail($id)
     {
         $crypto = Crypto::with(['coin'])->where('id', $id)->where('user_id', auth()->user()->id)->first();

@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container">
-        <div class="row" style="margin-top: 100px">
+        <section class="row">
             <div class="col-xs-12 col-md-8 col-md-offset-2">
                 <h1 class="underline cc {{$crypto->coin->short_name}}">{{$crypto->coin->name}}</h1>
                 <div class="lined body">
@@ -35,7 +35,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
     @include('layouts.add')

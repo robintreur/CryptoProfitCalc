@@ -39,9 +39,11 @@
   color: #25384b;
   transition: all ease .3s;
   cursor: pointer;
-  box-shadow: 0px 0px 100px $dark-grey;
+  box-shadow: 0 0 100px $dark-grey;
 
-  &:hover{
+  &:hover,
+  &:focus,
+  &:active{
     text-decoration: none;
     transform: rotate(90deg);
     color: #25384b;
