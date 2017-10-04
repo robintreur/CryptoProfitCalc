@@ -25,8 +25,20 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $users = User::select('name','email', 'is_admin')->get();
+        $users = User::all();
 
         return view('dashboard', compact('users'));
+    }
+
+    /**
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function active(Request $request)
+    {
+
+        User::where('email',$request->email)->first()->update($request->all());
+
+        return redirect()->route('dashboard');
     }
 }

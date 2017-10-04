@@ -9832,6 +9832,84 @@ body.crypto .endbody {
   border-left: 1px solid #fff;
 }
 
+.btn.btn-toggle {
+  margin: 0 4rem;
+  padding: 0;
+  position: relative;
+  border: none;
+  height: 1.5rem;
+  width: 3rem;
+  border-radius: 1.5rem;
+  background: #25384b;
+}
+
+.btn.btn-toggle > .handle {
+  position: absolute;
+  top: 0.1875rem;
+  left: 0.1875rem;
+  width: 1.125rem;
+  height: 1.125rem;
+  border-radius: 1.125rem;
+  background: #fff;
+  -webkit-transition: left .25s;
+  transition: left .25s;
+}
+
+.btn.btn-toggle.active > .handle {
+  left: 1.6875rem;
+  -webkit-transition: left .25s;
+  transition: left .25s;
+}
+
+.btn.btn-toggle:after {
+  content: 'On';
+  right: -4rem;
+  opacity: .5;
+}
+
+.btn.btn-toggle:before,
+.btn.btn-toggle:after {
+  color: #fff;
+}
+
+.btn.btn-toggle:before {
+  content: 'Off';
+  left: -4rem;
+}
+
+.btn.btn-toggle:before,
+.btn.btn-toggle:after {
+  line-height: 1.5rem;
+  width: 4rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: absolute;
+  bottom: 0;
+  -webkit-transition: opacity .25s;
+  transition: opacity .25s;
+}
+
+.btn.btn-toggle.active {
+  -webkit-transition: background-color 0.25s;
+  transition: background-color 0.25s;
+}
+
+.btn.btn-toggle.active:after {
+  opacity: 1;
+}
+
+.btn.btn-toggle.active:before {
+  opacity: .5;
+}
+
+.btn.btn-toggle.active,
+tr:nth-child(2n + 2) .btn.btn-toggle.active {
+  background-color: #1abc9c;
+}
+
 .form-control {
   background-color: rgba(255, 255, 255, 0.3);
   border-color: rgba(255, 255, 255, 0.3);
@@ -9846,5 +9924,30 @@ body.crypto .endbody {
 
 select option {
   color: #25384b;
+}
+
+.table > thead > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > th,
+.table > tbody > tr > td,
+.table > tfoot > tr > th,
+.table > tfoot > tr > td {
+  border-top: 0;
+}
+
+tbody tr:nth-child(2n + 2) {
+  background: #25384b;
+}
+
+tbody tr:nth-child(2n + 2) .btn.btn-toggle {
+  background: #34495e;
+}
+
+tbody tr td {
+  border-right: 1px solid rgba(250, 250, 250, 0.1);
+}
+
+tbody tr td:last-child {
+  border: 0;
 }
 

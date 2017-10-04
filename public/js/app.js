@@ -39626,6 +39626,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  */
 
 __webpack_require__("./resources/assets/js/bootstrap.js");
+__webpack_require__("./resources/assets/js/global.js");
 __webpack_require__("./resources/assets/js/animations.js");
 
 // window.Vue = require('vue');
@@ -39700,6 +39701,22 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+/***/ }),
+
+/***/ "./resources/assets/js/global.js":
+/***/ (function(module, exports) {
+
+$(document).ready(function () {
+    $(".update_active").click(function () {
+
+        if ($(this).attr("aria-pressed") == ' true ') {
+            $(this).closest('td').find(".active-false").prop("checked", true);
+        } else {
+            $(this).closest('td').find(".active-true").prop("checked", true);
+        }
+    });
+});
 
 /***/ }),
 

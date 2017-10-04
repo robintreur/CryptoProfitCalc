@@ -7,6 +7,7 @@ import {TimelineLite} from 'gsap';
  */
 
 require('./bootstrap');
+require('./global');
 require('./animations');
 
 // window.Vue = require('vue');
