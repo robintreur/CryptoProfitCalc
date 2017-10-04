@@ -9828,3 +9828,7 @@ body.crypto .endbody {
           box-shadow: 0 0 8px #1abc9c;
 }
 
+select option {
+  color: #25384b;
+}
+

@@ -5,6 +5,6 @@
                 Add new Crypto
             </div>
         </span>
-        <a class="add-new_btn" href="/cryptos/add">+</a>
+        <a class="add-new_btn" href="/cryptos/create">+</a>
     </div>
 </div

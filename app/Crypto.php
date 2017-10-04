@@ -13,4 +13,6 @@ class Crypto extends Model
     public function coin(){
         return $this->belongsTo('App\Coin');
     }
+
+    protected $guarded =  ['id'];
 }

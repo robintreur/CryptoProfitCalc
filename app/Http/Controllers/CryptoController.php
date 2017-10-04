@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 use App\Crypto;
+use App\Coin;
 use App\Transformers\CryptoTransformer;
 
 class CryptoController extends Controller
@@ -45,9 +46,26 @@ class CryptoController extends Controller
     /**
      * @return array
      */
-    public function add()
+    public function create()
     {
-        return view('cryptos.add');
+        $coins = Coin::all();
+
+        return view('cryptos.create', compact('coins'));
+    }
+
+    public function store()
+    {
+
+        Crypto::create([
+            'coin_id' => request('coin_id'),
+            'number' => request('number'),
+            'purchase_price' => request('purchase_price'),
+            'user_id' => auth()->user()->id,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
+        return redirect('/');
     }
 
     /**

@@ -15,9 +15,6 @@ class CryptoTransformer extends TransformerAbstract
     public function __construct()
     {
         $this->dataArray = App::make('caps');
-
-//        $this->dataArray = Cache::get('testtest');
-//        print_r($this->dataArray);exit;
     }
 
     /**
@@ -28,6 +25,7 @@ class CryptoTransformer extends TransformerAbstract
      */
     public function profit($coins, $price, $short_name){
         $profit = $coins * $short_name - $price;
+        $profit = round($profit,2);
         return $profit;
     }
 
