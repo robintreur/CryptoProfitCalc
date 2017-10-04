@@ -4,6 +4,12 @@ if($('body').is('.cryptos')){
     tl.staggerTo(".row.overview", 0.4, {ease: Expo.ease, x: 0}, '0.05');
 }
 
+if($('section').is('.succes')){
+    var tl = new TimelineMax();
+    tl.to(".succes", 0.6, {ease: Expo.ease, top: "50%", delay: 0.4});
+    tl.to(".succes", 0.6, {ease: Expo.ease, top: "100%", y: 0, delay: 1});
+}
+
 $(".cryptos-out").on('click' , function(event){
     event.preventDefault();
     var btn = this.getAttribute('href');

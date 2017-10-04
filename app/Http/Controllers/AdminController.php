@@ -25,7 +25,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-
         $users = User::select('name','email', 'is_admin')->get();
 
         return view('dashboard', compact('users'));

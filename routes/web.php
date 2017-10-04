@@ -19,14 +19,14 @@ Auth::routes();
 Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 
 Route::get('/cryptos', 'CryptoController@index')->name('cryptos');
-
-Route::get('/cryptos/detail/{crypto}', 'CryptoController@detail')->name('cryptos');
-
-Route::get('/cryptos/create', 'CryptoController@create');
-
+Route::get('/cryptos/create', 'CryptoController@create')->name('crypto.create');
 Route::post('/cryptos', 'CryptoController@store');
 
-//API
-Route::get('/api/cryptos', 'CryptoController@apiIndex')->name('cryptos');
+Route::get('/cryptos/detail/{crypto}', 'CryptoController@detail')->name('crypto');
+Route::get('/cryptos/detail/{crypto}/edit', 'CryptoController@edit')->name('crypto.edit');
+Route::put('/cryptos/detail/{crypto}', 'CryptoController@update');
+Route::delete('/cryptos/detail/{crypto}', 'CryptoController@destroy')->name('crypto.destroy');
 
-Route::get('/api/cryptos/detail/{crypto}', 'CryptoController@apiDetail')->name('cryptos');
+//API
+Route::get('/api/cryptos', 'CryptoController@apiIndex')->name('api.cryptos');
+Route::get('/api/cryptos/detail/{crypto}', 'CryptoController@apiDetail')->name('api.crypto');

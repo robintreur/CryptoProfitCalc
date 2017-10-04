@@ -22,7 +22,7 @@ class CryptoController extends Controller
     }
 
     /**
-     * @return array
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
@@ -33,7 +33,8 @@ class CryptoController extends Controller
     }
 
     /**
-     * @return array
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function detail($id)
     {
@@ -44,7 +45,7 @@ class CryptoController extends Controller
     }
 
     /**
-     * @return array
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
@@ -53,8 +54,17 @@ class CryptoController extends Controller
         return view('cryptos.create', compact('coins'));
     }
 
+    /**
+     *
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function store()
     {
+        $this->validate(request(), [
+            'coin_id' => 'required',
+            'number' => 'required',
+            'purchase_price' => 'required',
+        ]);
 
         Crypto::create([
             'coin_id' => request('coin_id'),
@@ -65,10 +75,64 @@ class CryptoController extends Controller
             'updated_at' => now(),
         ]);
 
-        return redirect('/');
+        return redirect()->route('cryptos')
+            ->with('succes','Crypto created Succesfully');
     }
 
     /**
+     * Show the form for editing the specified resource.
+     *
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit($id)
+    {
+        $crypto = Crypto::find($id);
+        $coins = Coin::all();
+
+        return view('cryptos.edit',compact('crypto', 'coins'));
+    }
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function update(Request $request, $id)
+    {
+        $this->validate(request(), [
+            'coin_id' => 'required',
+            'number' => 'required',
+            'purchase_price' => 'required',
+        ]);
+
+        Crypto::find($id)->update($request->all());
+
+        return redirect()->route('cryptos')
+            ->with('succes','Crypto updated successfully');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param $id
+     * @return mixed
+     */
+    public function destroy($id)
+    {
+        $crypto = Crypto::find($id);
+        $crypto->delete();
+
+        return redirect()->route('cryptos')
+            ->with('succes','Crypto deleted successfully');
+    }
+
+//    API
+    /**
+     * @param $id
      * @return array
      */
     public function apiDetail($id)
@@ -85,10 +149,6 @@ class CryptoController extends Controller
     {
         $cryptos = Crypto::with(['coin'])->where('user_id', auth()->user()->id)->get();
 
-
-
         return fractal()->collection($cryptos)->transformWith(new CryptoTransformer())->toArray();
-
-
     }
 }

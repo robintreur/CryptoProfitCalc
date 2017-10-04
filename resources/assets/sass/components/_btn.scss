@@ -44,8 +44,9 @@
     float: left;
     border-bottom:1px solid #fff;
     color: #fff;
+    background: transparent;
 
-    &:nth-child(2n+2){
+    &.remove{
       border-left:1px solid #fff;
     }
   }

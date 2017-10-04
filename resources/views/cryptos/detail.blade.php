@@ -29,8 +29,12 @@
                 </div>
                 <div class="row endbody">
                     <div class="col-md-12">
-                        <a href="#" class="edit btn btn-half">Edit {{$crypto->coin->name}}</a>
-                        <a href="#" class="remove btn btn-half">Remove {{$crypto->coin->name}}</a>
+                        <a href="/cryptos/detail/{{$crypto->id}}/edit" class="edit btn btn-half">Edit {{$crypto->coin->name}}</a>
+                        <form class="form-horizontal" method="POST" action="/cryptos/detail/{{$crypto->id}}}">
+                            {{ method_field('DELETE') }}
+                            {{ csrf_field() }}
+                            <button type="submit" class="remove btn btn-half">Delete {{$crypto->coin->name}}</button>
+                        </form>
                         <a href="/cryptos" class="btn btn-back">Back to overview</a>
                     </div>
                 </div>

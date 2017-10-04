@@ -19,8 +19,9 @@ class Admin
         if ( Auth::check() && Auth::user()->isAdmin()) {
             return $next($request);
         }else if(Auth::check()){
-            return redirect('/cryptos');
+            return redirect()->route('cryptos');
+
         }
-        return redirect('/');
+        return redirect()->route('welcome');
     }
 }

@@ -2,6 +2,11 @@
 @section('body-class', 'cryptos')
 
 @section('content')
+    @if (session('succes'))
+        <section class="row succes">
+            <h2>{{ session('succes') }}</h2>
+        </section>
+    @endif
     <div class="overview-container">
         @foreach($data as $cryptos)
             @foreach($cryptos as $crypto)
