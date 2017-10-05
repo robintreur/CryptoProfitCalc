@@ -36,7 +36,7 @@
                                     <input type="checkbox" class="hidden active-true" name="active" value="1">
                                     <input type="checkbox" class="hidden active-false" name="active" value="0">
 
-                                    <button type="submit" class="update_active btn btn-lg btn-toggle @if($user->active) active @endif" aria-pressed="@if($user->active) true @else false @endif" autocomplete="off">
+                                    <button type="submit" class="update_active btn btn-lg btn-toggle @if($user->active) active @endif" @if($user->active)aria-pressed="true" @else aria-pressed="false" @endif autocomplete="off" @if($user->is_admin) disabled @endif>
                                         <div class="handle"></div>
                                     </button>
                                 </form>

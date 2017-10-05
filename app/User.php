@@ -41,4 +41,12 @@ class User extends Authenticatable
     {
         return $this->is_admin;
     }
+
+    /**
+     * @return mixed
+     */
+    public function isActive()
+    {
+        return $this->active;
+    }
 }
