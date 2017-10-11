@@ -17,6 +17,7 @@ Route::get('/', 'WelcomeController@index')->name('welcome');
 Auth::routes();
 
 Route::get('/dashboard', 'AdminController@index')->name('dashboard');
+Route::get('/dashboard/search', 'AdminController@search')->name('dashboard.search');
 Route::put('/dashboard', 'AdminController@active');
 
 Route::get('/cryptos', 'CryptoController@index')->name('cryptos');

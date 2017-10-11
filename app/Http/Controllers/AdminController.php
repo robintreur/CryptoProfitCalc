@@ -31,6 +31,14 @@ class AdminController extends Controller
     }
 
     /**
+     * @param Request $request
+     */
+    public function search(Request $request)
+    {
+        // Here will be the Search
+    }
+
+    /**
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

@@ -9905,6 +9905,15 @@ body.crypto .endbody {
   opacity: .5;
 }
 
+.btn:focus,
+.btn.focus,
+.btn:active:focus,
+.btn:active.focus,
+.btn.active:focus,
+.btn.active.focus {
+  outline: none;
+}
+
 .btn.btn-toggle.active,
 tr:nth-child(2n + 2) .btn.btn-toggle.active {
   background-color: #1abc9c;

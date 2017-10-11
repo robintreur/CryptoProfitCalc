@@ -113,6 +113,9 @@
       }
     }
   }
+  &:focus, &.focus, &:active:focus, &:active.focus, &.active:focus, &.active.focus{
+    outline:none;
+  }
 }
 
 .btn.btn-toggle.active,

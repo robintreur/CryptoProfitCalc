@@ -18,6 +18,7 @@
                         <th>Email</th>
                         <th>Admin</th>
                         <th>Active</th>
+                        <th>Number of Cryptos</th>
                         <th>Created at</th>
                     </tr>
                 </thead>
@@ -41,6 +42,7 @@
                                     </button>
                                 </form>
                             </td>
+                            <td>{{$user->cryptos->count()}}</td>
                             <td>{{$user->created_at->toFormattedDateString()}}</td>
                         </tr>
                     @endforeach
