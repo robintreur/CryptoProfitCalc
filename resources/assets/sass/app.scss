@@ -8,6 +8,8 @@
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
+// mixins
+@import "mixins/_breakpoints";
 
 // Global
 @import "global/_global";

@@ -1,13 +1,50 @@
+label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: bold;
+  opacity: 0.5;
+  margin-bottom: 0;
+  position: absolute;
+  top: 0;
+  transition: all ease .3s;
+}
+
 .form-control{
   background-color: $white-opacity;
-  border-color: $white-opacity;
+  border:0;
+  border-bottom: 1px solid $white-opacity;
   border-radius: 0;
   color: #fff;
+  margin-top: 15px;
 
   &:focus{
     box-shadow: 0 0 8px $green;
+
+    +label{
+      color: $green;
+      top: -5px;
+    }
+  }
+
+  &.with-icon{
+    padding-left: 4rem;
   }
 }
 select option{
   color: $dark-grey;
+}
+.form-group i{
+  position: absolute;
+  margin-left: 10px;
+  top: 15px;
+  font-size: 1.5em;
+  pointer-events: none;
+
+  &.EUR:before{
+    content: "\20AC";
+    font-weight: bold;
+    font-style: initial;
+    opacity: 0.4;
+  }
 }

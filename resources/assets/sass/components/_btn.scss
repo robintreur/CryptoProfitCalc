@@ -1,7 +1,9 @@
 .btn{
   border-radius:0;
 
-  &.btn-primary{
+  &.btn-primary,
+  &.btn-primary:focus,
+  &.btn-primary:active{
     background: $green;
     border-color: $dark-green;
   }

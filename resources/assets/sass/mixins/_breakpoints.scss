@@ -1,0 +1,17 @@
+@mixin breakpoint($point) {
+  @if $point == xlarge {
+    @media (min-width: 1140px) { @content ; }
+  }
+  @else if $point == large {
+    @media (min-width: 992px) { @content ; }
+  }
+  @else if $point == medium {
+    @media (min-width: 786px)  { @content ; }
+  }
+  @else if $point == small {
+    @media (min-width: 360px)  { @content ; }
+  }
+  @else if $point == sliderHeight {
+    @media (max-height: 725px)  { @content ; }
+  }
+}

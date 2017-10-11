@@ -9,8 +9,21 @@ h1, h2, h3, h4, h5, h6{
   font-weight:bold;
   margin-top: 0;
 }
+
+h1{
+  font-size:24px;
+
+  @include breakpoint(medium) {
+    font-size: 36px;
+  }
+}
+
 .sub{
-  font-size:20px;
+  font-size:18px;
+
+  @include breakpoint(medium) {
+    font-size: 20px;
+  }
 }
 ul{
   margin-bottom:0;
@@ -58,11 +71,14 @@ section:not(.overview){
 
 //overview section
 section.overview{
-  display: flex;
-  height:50vh;
-  min-height:230px;
-  max-height:300px;
   overflow: hidden;
+
+  @include breakpoint(medium) {
+    display: flex;
+    height:50vh;
+    min-height:230px;
+    max-height:300px;
+  }
 
   .btn{
     width: 100%;
@@ -82,8 +98,14 @@ section.overview{
     .btn{
       bottom:0;
     }
+
     > div:first-child .inner{
-      top: calc(50% - 50px);
+      margin-bottom:100px;
+
+      @include breakpoint(medium) {
+        margin-bottom:0;
+        top: calc(50% - 50px);
+      }
     }
   }
 
@@ -92,11 +114,19 @@ section.overview{
     flex-wrap: wrap;
     position: relative;
 
+    @include breakpoint(medium) {
+      flex-wrap: wrap;
+    }
+
     .inner{
-      position: absolute;
-      transform: translateY(-50%);
-      top:50%;
       transition: all ease .3s;
+      margin: 0 auto;
+
+      @include breakpoint(medium) {
+        position: absolute;
+        transform: translateY(-50%);
+        top:50%;
+      }
     }
 
     &:first-child .inner{
