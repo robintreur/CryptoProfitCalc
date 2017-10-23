@@ -7,7 +7,7 @@
             <div class="col-xs-12 col-md-8 col-md-offset-2">
                 <h1 class="underline">Add new crypto</h1>
 
-                <form class="form-horizontal" method="POST" action="/cryptos">
+                <form class="form-horizontal" method="POST" action="{{ route('cryptos') }}">
                     {{ csrf_field() }}
 
                     <div class="form-group{{ $errors->has('coin_id') ? ' has-error' : '' }}">

@@ -5,6 +5,6 @@
                 Add new Crypto
             </div>
         </span>
-        <a class="add-new_btn" href="/cryptos/create">+</a>
+        <a class="add-new_btn" href="{{ route('crypto.create') }}">+</a>
     </div>
 </div

@@ -7,7 +7,7 @@
             <div class="col-xs-12 col-md-8 col-md-offset-2">
                 <h1 class="underline">Edit: <span class="cc {{$crypto->coin->short_name}}">{{$crypto->coin->name}}</span></h1>
 
-                <form class="form-horizontal" method="POST" action="/cryptos/detail/{{$crypto->id}}}">
+                <form class="form-horizontal" method="POST" action="{{ route('crypto', $crypto->id) }}">
                     {{ csrf_field() }}
                     {{ method_field('PUT') }}
 

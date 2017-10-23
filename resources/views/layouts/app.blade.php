@@ -38,9 +38,9 @@
                     <ul class="nav navbar-nav">
                         @auth
                             @if(Auth::user()->is_admin)
-                                <li><a href="/dashboard">Dashboard</a></li>
+                                <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
                             @endif
-                            <li><a href="/cryptos">Crypto overview</a></li>
+                            <li><a href="{{ route('cryptos') }}">Crypto overview</a></li>
                         @endauth
                     </ul>
 

@@ -1,3 +1,11 @@
+.open > .btn-primary.dropdown-toggle:focus,
+.open > .btn-primary.dropdown-toggle,
+.open > .btn-primary.dropdown-toggle:hover,
+.open > .btn-primary.dropdown-toggle:active{
+  background: $dark-green;
+  border-color: $green;
+}
+
 .btn{
   border-radius:0;
 

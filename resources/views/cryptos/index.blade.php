@@ -16,7 +16,7 @@
                             <h1 class="cc {{$crypto->coin->short_name}}">{{$crypto->coin->name}}</h1>
                             <h3>€{{$crypto->eur->profit}}</h3>
                         </div>
-                        <a class="btn cryptos-out" href="/cryptos/detail/{{$crypto->id}}">Click here for more detail</a>
+                        <a class="btn cryptos-out" href="{{ route('crypto', $crypto->id) }}">Click here for more detail</a>
                     </div>
                     <div class="col-xs-12 col-md-6">
                         <div class="inner text-center change-container">

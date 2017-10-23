@@ -10,6 +10,17 @@
                     {{ session('status') }}
                 </div>
             @endif
+            <div class="dropdown show">
+                <a class="btn btn-primary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filter active
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                    <a class="dropdown-item" href="{{ route('dashboard') }}">Show all</a>
+                    <a class="dropdown-item" href="/dashboard/1">Show active</a>
+                    <a class="dropdown-item" href="/dashboard/0">Show disabled</a>
+                </div>
+            </div>
 
             <table class="table">
                 <thead>
@@ -29,7 +40,7 @@
                             <td>{{$user->email}}</td>
                             <td>@if($user->is_admin == 1) Yes @else No @endif</td>
                             <td>
-                                <form class="form-horizontal" method="POST" action="/dashboard">
+                                <form class="form-horizontal" method="POST" action="{{ route('dashboard') }}">
                                     {{ method_field('PUT') }}
                                     {{ csrf_field() }}
                                     <input id="email" type="hidden" value="{{$user->email}}" class="form-control" name="email">

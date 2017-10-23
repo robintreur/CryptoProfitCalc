@@ -48,3 +48,14 @@ select option{
     opacity: 0.4;
   }
 }
+a.dropdown-item {
+  width: 100%;
+  float: left;
+  padding: 10px;
+  color: $green;
+
+  &:hover{
+    background: $gray;
+    color: #fff;
+  }
+}

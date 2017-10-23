@@ -9817,6 +9817,14 @@ body.crypto .endbody {
   position: fixed;
 }
 
+.open > .btn-primary.dropdown-toggle:focus,
+.open > .btn-primary.dropdown-toggle,
+.open > .btn-primary.dropdown-toggle:hover,
+.open > .btn-primary.dropdown-toggle:active {
+  background: #189072;
+  border-color: #1abc9c;
+}
+
 .btn {
   border-radius: 0;
 }
@@ -10015,6 +10023,18 @@ select option {
   font-weight: bold;
   font-style: initial;
   opacity: 0.4;
+}
+
+a.dropdown-item {
+  width: 100%;
+  float: left;
+  padding: 10px;
+  color: #1abc9c;
+}
+
+a.dropdown-item:hover {
+  background: #555555;
+  color: #fff;
 }
 
 .table > thead > tr > th,

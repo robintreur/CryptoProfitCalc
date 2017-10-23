@@ -49,4 +49,16 @@ class AdminController extends Controller
 
         return redirect()->route('dashboard');
     }
+
+
+    /**
+     * @param $active
+     * @return mixed
+     */
+    public function filterActive($active)
+    {
+        $users = User::with('cryptos')->where('active', $active)->get();
+
+        return view('dashboard', compact('users'));
+    }
 }

@@ -29,13 +29,13 @@
                 </div>
                 <div class="row endbody">
                     <div class="col-md-12">
-                        <a href="/cryptos/detail/{{$crypto->id}}/edit" class="edit btn btn-half">Edit {{$crypto->coin->name}}</a>
-                        <form class="form-horizontal" method="POST" action="/cryptos/detail/{{$crypto->id}}}">
+                        <a href="{{ route('crypto.edit', $crypto->id) }}" class="edit btn btn-half">Edit {{$crypto->coin->name}}</a>
+                        <form class="form-horizontal" method="POST" action="{{ route('crypto', $crypto->id) }}">
                             {{ method_field('DELETE') }}
                             {{ csrf_field() }}
                             <button type="submit" class="remove btn btn-half">Delete {{$crypto->coin->name}}</button>
                         </form>
-                        <a href="/cryptos" class="btn btn-back">Back to overview</a>
+                        <a href="{{ route('cryptos')}}" class="btn btn-back">Back to overview</a>
                     </div>
                 </div>
             </div>
