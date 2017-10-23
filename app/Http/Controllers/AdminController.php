@@ -25,7 +25,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::with('cryptos')->get();
 
         return view('dashboard', compact('users'));
     }
