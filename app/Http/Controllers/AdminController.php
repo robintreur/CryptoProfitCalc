@@ -31,14 +31,6 @@ class AdminController extends Controller
     }
 
     /**
-     * @param Request $request
-     */
-    public function search(Request $request)
-    {
-        // Here will be the Search
-    }
-
-    /**
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -58,6 +50,17 @@ class AdminController extends Controller
     public function filterActive($active)
     {
         $users = User::with('cryptos')->where('active', $active)->get();
+
+        return view('dashboard', compact('users'));
+    }
+
+    /**
+     * @param $request
+     * @return mixed
+     */
+    public function search($request)
+    {
+        $users = User::search($request)->get();
 
         return view('dashboard', compact('users'));
     }
