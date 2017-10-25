@@ -14,7 +14,7 @@ class CryptoTransformer extends TransformerAbstract
 
     public function __construct()
     {
-        $this->dataArray = App::make('caps');
+        $this->dataArray = Cache::get('caps');
     }
 
     /**

@@ -45,8 +45,11 @@ nav{
     }
 
     &:hover,
-    &:hover span {
+    &:hover span,
+    &:focus,
+    &:focus span{
       color: #fff;
     }
+
   }
 }

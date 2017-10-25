@@ -9723,7 +9723,9 @@ nav {
 }
 
 .navbar-default .navbar-brand:hover,
-.navbar-default .navbar-brand:hover span {
+.navbar-default .navbar-brand:hover span,
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:focus span {
   color: #fff;
 }
 

@@ -25,8 +25,7 @@ class GetCoinMarketCapApi
             $dataArray[$capData['symbol']] = $capData;
         }
 
-//        Cache::put('testtest', $dataArray);
-        App::instance('caps', $dataArray);
+        Cache::put('caps', $dataArray, 1);
         return $next($request);
     }
 }
