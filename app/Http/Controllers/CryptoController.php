@@ -22,6 +22,8 @@ class CryptoController extends Controller
     }
 
     /**
+     * Show all cryptos from API
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
@@ -33,6 +35,8 @@ class CryptoController extends Controller
     }
 
     /**
+     * Show crypto detail from API
+     *
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -45,6 +49,8 @@ class CryptoController extends Controller
     }
 
     /**
+     * Show the form for create / add the specified resource
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
@@ -55,6 +61,7 @@ class CryptoController extends Controller
     }
 
     /**
+     * Store crypto
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
@@ -80,7 +87,7 @@ class CryptoController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * Show the form for editing the specified resource
      *
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -95,7 +102,7 @@ class CryptoController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
+     * Update the specified resource in storage
      *
      * @param Request $request
      * @param $id
@@ -116,7 +123,7 @@ class CryptoController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Remove the specified resource from storage
      *
      * @param $id
      * @return mixed
@@ -132,6 +139,8 @@ class CryptoController extends Controller
 
 //    API
     /**
+     * Create an API from crypto detail (from user)
+     *
      * @param $id
      * @return array
      */
@@ -143,6 +152,8 @@ class CryptoController extends Controller
     }
 
     /**
+     * Create an API from all crypto (from user)
+     *
      * @return array
      */
     public function apiIndex()

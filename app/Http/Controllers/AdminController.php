@@ -9,7 +9,7 @@ use App\User;
 class AdminController extends Controller
 {
     /**
-     * Create a new controller instance.
+     * Create a new controller instance
      *
      * @return void
      */
@@ -31,6 +31,8 @@ class AdminController extends Controller
     }
 
     /**
+     * Activate or disable user
+     *
      * @param $id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -44,6 +46,8 @@ class AdminController extends Controller
 
 
     /**
+     * Filter on active or disabled user
+     *
      * @param $active
      * @return mixed
      */
@@ -55,13 +59,16 @@ class AdminController extends Controller
     }
 
     /**
-     * @param $request
-     * @return mixed
+     * Search all users
+     *
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function search($request)
+    public function searchEquipment(Request $request)
     {
-        $users = User::search($request)->get();
+        $searchValue = $request->searchValue;
+        $users = User::search($searchValue)->get();
 
-        return view('dashboard', compact('users'));
+        return view('dashboard', compact('users', 'searchValue'));
     }
 }

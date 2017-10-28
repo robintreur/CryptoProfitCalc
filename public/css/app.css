@@ -10064,3 +10064,19 @@ tbody tr td:last-child {
   border: 0;
 }
 
+.search-container {
+  float: left;
+}
+
+.search-container #search,
+.search-container .btn {
+  float: left;
+  margin: 0;
+  width: auto;
+}
+
+.filter-container {
+  float: left;
+  margin-right: 30px;
+}
+

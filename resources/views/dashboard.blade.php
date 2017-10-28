@@ -10,7 +10,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <div class="dropdown show">
+                <div class="dropdown show filter-container">
                     <a class="btn btn-primary dropdown-toggle" id="dropdownMenuLink" data-toggle="dropdown"
                        aria-haspopup="true" aria-expanded="false">
                         Filter active
@@ -22,6 +22,12 @@
                         <a class="dropdown-item" href="{{ route('dashboard.filterActive', 0) }}">Show disabled</a>
                     </div>
                 </div>
+
+                <form class="form-horizontal search-container" method="POST" action="{{ route('dashboard.search') }}">
+                    {{ csrf_field() }}
+                    <input id="search" type="text" @if(isset($searchValue)) value="{{ $searchValue }}" @endif placeholder="Search here" class="form-control" name="searchValue">
+                    <button type="submit" class="btn btn-primary">Search</button>
+                </form>
 
                 <table class="table">
                     <thead>
