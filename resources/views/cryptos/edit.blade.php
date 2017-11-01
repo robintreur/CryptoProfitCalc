@@ -26,7 +26,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <div class="form-group number-group{{ $errors->has('number') ? ' has-error' : '' }}" style="margin-right: 0;">
+                            <div class="form-group number-group{{ $errors->has('number') ? ' has-error' : '' }}">
                                 <i class="cc {{$crypto->coin->short_name}}"></i>
                                 <input id="number" type="number" step="any" placeholder="E.g. 0.007894" value="{{$crypto->number}}" class="form-control with-icon" name="number">
                                 <label for="number">Number of coins</label>
@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="form-group{{ $errors->has('purchase_price') ? ' has-error' : '' }}" style="margin-left: 0;">
+                            <div class="form-group price-group{{ $errors->has('purchase_price') ? ' has-error' : '' }}">
                                 <i class="EUR"></i>
                                 <input id="purchase_price" type="number" step="any" placeholder="E.g. 107.50" value="{{$crypto->purchase_price}}" class="form-control with-icon" name="purchase_price">
                                 <label for="purchase_price">Purchase price</label>

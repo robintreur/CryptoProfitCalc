@@ -50,9 +50,10 @@
   }
 }
 .add-new_info{
-  height: calc(100vh - 207px);
+  height: calc(100vh - 220px);
   width: calc(50% - 88px);
   left: 50%;
+  bottom: 47px;
   position: fixed;
   border-left: 5px dashed $green;
   display: block;

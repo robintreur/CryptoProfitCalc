@@ -59,3 +59,14 @@ a.dropdown-item {
     color: #fff;
   }
 }
+
+@include breakpoint(medium) {
+  .price-group,
+  .form-horizontal .form-group.price-group {
+    margin-left: 0;
+  }
+  .number-group,
+  .form-horizontal .form-group.number-group {
+    margin-right: 0;
+  }
+}
